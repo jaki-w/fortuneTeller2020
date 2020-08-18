@@ -25,14 +25,15 @@ function determineFortune(luck) {
 }
 
 function determineClass(luck) {
-  let class = "";
+  let addClass = "";
   if (luck === "unlucky") {
-    let class = "unlucky-background";
+    addClass = "unlucky-background";
   } else if (luck === "neutral") {
-    let class = "neutral-background";
+    addClass = "neutral-background";
   } else {
-    let class = "lucky-background";
+    addClass = "lucky-background";
   }
+  return addClass;
 }
  
 $(document).ready(function() {
@@ -48,8 +49,8 @@ $(document).ready(function() {
     });
     const luck = determineLuck(valueCounter);
     const fortune = determineFortune(luck);
-    const class = determineClass(luck);
-    $("#reading").addClass(""class"");
+    const fortuneBackground = determineClass(luck);
+    $("#reading").addClass(fortuneBackground);
     $("#fortuneReturn").text(fortune);
     $("#luckReturn").text(luck);
   });

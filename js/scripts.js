@@ -28,6 +28,8 @@ $(document).ready(function() {
   $("form").submit(function(event) {
     event.preventDefault();
     $(".showLater").show();
+    $("#showFirst").hide();
+    $("form").addClass("submit-background");
     let valueCounter = 0;
     $("input:checkbox[name=occurances]:checked").each(function() {
       const occurance = parseInt($(this).val());

@@ -1,13 +1,40 @@
 body {
   font-family: 'Courier New', Courier, monospace;
+  color: whitesmoke;
+  background: url("../img/background.png");
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
-h1 {
-  color: palegoldenrod;
+.submit-background {
+  background: url("../img/openedEye.png");
+  background-repeat: no-repeat;
+  width: 600px;
+  height: 600px;
+  margin: auto;
+  margin-top: 100px;
+}
+
+form {
+  background: url("../img/plainEye.png");
+  background-repeat: no-repeat;
+  width: 600px;
+  height: 600px;
+  margin: auto;
+  margin-top: 100px;
+
+}
+
+h1, h2 {
+  text-align: center;
 }
 
 .showLater {
   margin: 30px;
   display: none;
   text-align: center;
+}
+
+#showFirst {
+
 }

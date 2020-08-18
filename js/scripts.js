@@ -23,6 +23,17 @@ function determineFortune(luck) {
     return luckyFortune;
   }
 }
+
+function determineClass(luck) {
+  let class = "";
+  if (luck === "unlucky") {
+    let class = "unlucky-background";
+  } else if (luck === "neutral") {
+    let class = "neutral-background";
+  } else {
+    let class = "lucky-background";
+  }
+}
  
 $(document).ready(function() {
   $("form").submit(function(event) {
@@ -37,6 +48,8 @@ $(document).ready(function() {
     });
     const luck = determineLuck(valueCounter);
     const fortune = determineFortune(luck);
+    const class = determineClass(luck);
+    $("#reading").addClass(""class"");
     $("#fortuneReturn").text(fortune);
     $("#luckReturn").text(luck);
   });

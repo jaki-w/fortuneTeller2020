@@ -1,11 +1,13 @@
 function determineLuck(value) {
   let luck = "";
-  if (value >= 7) {
+  if (value >= 6) {
     luck = "unlucky";
   } else if (value >= 5) {
     luck = "neutral";
-  } else {
+  } else if (value >= 1) {
     luck = "lucky"
+  } else {
+    luck = "not available";
   }
   return luck;
 }
@@ -14,13 +16,16 @@ function determineFortune(luck) {
   const unluckyFortune = "You learn from your mistakes...you will learn a lot this year.";
   const neutralFortune = "If you have something good in your life, don't let it go.";
   const luckyFortune = "A dream you have will come true.";
+  const noResponse = "To attain a fortune, please enligthen me with a response.";
 
   if (luck === "unlucky") {
     return unluckyFortune;
   } else if (luck === "neutral") {
     return neutralFortune;
-  } else {
+  } else if (luck === "lucky") {
     return luckyFortune;
+  } else {
+    return noResponse;
   }
 }
 

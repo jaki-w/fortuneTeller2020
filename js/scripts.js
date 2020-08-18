@@ -13,7 +13,7 @@ function determineLuck(value) {
 function determineFortune(luck) {
   const unluckyFortune = "You learn from your mistakes...you will learn a lot this year.";
   const neutralFortune = "If you have something good in your life, don't let it go.";
-  const luckyFortune = "A dream you have will come true";
+  const luckyFortune = "A dream you have will come true.";
 
   if (luck === "unlucky") {
     return unluckyFortune;
@@ -39,5 +39,10 @@ $(document).ready(function() {
     const fortune = determineFortune(luck);
     $("#fortuneReturn").text(fortune);
     $("#luckReturn").text(luck);
+  });
+
+  $("#tryAgainButton").click(function(event) {
+    event.preventDefault();
+    location.reload();
   });
 });

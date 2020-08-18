@@ -2,7 +2,7 @@ function determineLuck(value) {
   let luck = "";
   if (value <= 5) {
     luck = "unlucky";
-  } else if (value <= 7) {
+  } else if (value <= 6) {
     luck = "neutral";
   } else {
     luck = "lucky"
@@ -10,7 +10,19 @@ function determineLuck(value) {
   return luck;
 }
 
-// function determineFortune(fortune)
+function determineFortune(luck) {
+  const unluckyFortune = "You learn from your mistakes...you will learn a lot this year.";
+  const neutralFortune = "If you have something good in your life, don't let it go.";
+  const luckyFortune = "A dream you have will come true";
+
+  if (luck === "unlucky") {
+    return unluckyFortune;
+  } else if (luck === "neutral") {
+    return neutralFortune;
+  } else {
+    return luckyFortune;
+  }
+}
  
 $(document).ready(function() {
   $("form").submit(function(event) {
@@ -22,7 +34,8 @@ $(document).ready(function() {
       valueCounter += occurance;
     });
     const luck = determineLuck(valueCounter);
-    console.log(luck);
-    console.log(valueCounter);
+    const fortune = determineFortune(luck);
+    $("#fortuneReturn").text(fortune);
+    $("#luckReturn").text(luck);
   });
 });

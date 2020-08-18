@@ -1,8 +1,8 @@
 function determineLuck(value) {
   let luck = "";
-  if (value <= 5) {
+  if (value >= 7) {
     luck = "unlucky";
-  } else if (value <= 6) {
+  } else if (value >= 5) {
     luck = "neutral";
   } else {
     luck = "lucky"
